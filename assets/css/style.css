@@ -155,3 +155,14 @@ p.speech:after {
     font-size: 1rem;
     margin-bottom: 6px;
 }
+
+
+/* Fi's additions 9 Feb 2023*/
+#placeholder-image {
+    height: 200px;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+}

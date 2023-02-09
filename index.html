@@ -160,9 +160,35 @@
 
 
   <!--Modals-->
-  <!-- Button trigger modal -->
+<!-- Button trigger facts modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#facts-modal">
+  Facts Modal
+</button>
+
+<!-- Facts Modal -->
+<div class="modal fade" id="facts-modal" tabindex="-1" role="dialog" aria-labelledby="facts-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img id="placeholder-image" src="./assets/images/placeholder.png" alt="placeholder image">
+        <h5 class="modal-title" id="animal-name">Animal Name</h5>
+      </div>
+      <div class="modal-body">
+        Facts go here
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger on-load modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instructions-modal">
-  Launch demo modal
+  Launch on-load modal
 </button>
 
 <!-- Modal -->
