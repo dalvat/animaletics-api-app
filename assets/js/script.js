@@ -75,4 +75,4 @@ card.forEach(){
 }
  
 
-  var populating Card = document.getElementById ('card-body')
+  var populating Card = document.getElementById ('card-body') 
