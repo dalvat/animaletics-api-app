@@ -6,22 +6,23 @@ html {
 
 /* ##################################### body ##################################### */
 body {
-    margin: 0 auto 0 auto;
+    margin: auto;
+    max-width: 1200px;
     font-family: 'Merriweather', serif;
     color: #40514e;
     height: 100vh;
-    margin: 0;
+
 }
 
 /* ##################################### header ##################################### */
 #header {
     background-color: aquamarine;
-    padding: 100px 0px 0px;
+    padding: 4px
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 8rem;
+    font-size: 6rem;
     color: #66bfbf;
     font-weight: normal;
 
@@ -30,7 +31,7 @@ h1 {
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #66bfbf;
     font-weight: normal;
 
@@ -101,7 +102,7 @@ p.speech:after {
 
 /* ##################################### instructions paragraph ##################################### */
 .instructions p {
-    font-size: 30px;
+    font-size: 20px;
     margin: 30px auto;
 }
 
@@ -117,7 +118,7 @@ p.speech:after {
 
 .row {
     background-color: rgb(24, 226, 223);
-    border: 4mm ridge rgba(211, 220, 50, .6);
+    border: 4
 }
 
 .row div .card {
@@ -131,11 +132,12 @@ p.speech:after {
 .footer {
     text-align: center;
     background-color: #5c8d89;
-    padding: 50px 0 20px;
+    padding: 1rem;
 }
 
 
 .footer-link {
+    align-items: center;
     color: #66bfbf;
     text-decoration: none;
     margin-left: 10px;
@@ -151,6 +153,5 @@ p.speech:after {
 .copyright {
     color: #eaf6f6;
     font-size: 1rem;
-    padding: 16px 20px;
-    margin-bottom: 45px;
+    margin-bottom: 6px;
 }
