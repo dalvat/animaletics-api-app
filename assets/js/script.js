@@ -69,7 +69,6 @@ fetch(giphyStickersURL)
 
  
 let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
-console.log (randomlySelectedImage.imageSource)
 document.getElementById('card-3').innerHTML = 
   `<img src="${randomlySelectedImage.imageSource}"  />`;
 
@@ -82,13 +81,15 @@ document.getElementById('card-3').innerHTML =
         let imageContainer = document.getElementById('card-'+i);
         imageContainer.innerHTML = 
         `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
-        imageContainer.setAttribute("class","col-xl-4 col-lg-6 mb-5 mt-1 ");
+        imageContainer.setAttribute("class"," btn");
         const title = document.createElement('p');
         title.style.fontSize='20px';
         title.innerHTML = randomlySelectedImage.animalName;
         imageContainer.appendChild(title)
     }
 
+var animalButton = document.getElementsByClassName('btn');
+animalButton.onclick = console.log('Lets open the modal now!')
 
 
 
