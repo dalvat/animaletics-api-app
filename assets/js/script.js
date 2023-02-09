@@ -26,6 +26,8 @@ let animals = [
     {animalName:'owl',
     ApiID: ''},
 ]
+//specifying which animal
+console.log(animals[1].animalName)
 let ninjaUrl = 'https://api.api-ninjas.com/v1/animals?name=pig'
 
 // giphy data
@@ -33,7 +35,7 @@ fetch(giphyStickersURL)
   .then((response) => response.json())
   .then((data) => console.log(data))
 
-  //fetching ninja data
+//fetching ninja data
   let options = {
     method: 'GET',
     headers: { 'x-api-key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO' }
@@ -41,7 +43,8 @@ fetch(giphyStickersURL)
   fetch(ninjaUrl,options)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
-          console.log(data)
+          console.log(data);
+          console.log(data[0].name)
         })
         .catch(err => {
           console.log(`error ${err}`)
