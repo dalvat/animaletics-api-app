@@ -5,63 +5,168 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link href="./assets/css/style.css"  rel="stylesheet">
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/4668d3c36e.js" crossorigin="anonymous"></script>
+  <!-- css link -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <!-- speech bubble font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+  <!-- tittle -->
   <title>Animaletics</title>
-
-  <style>
-    .column {
-      min-height: 400px;
-    }
-
-    #col1 {
-      background-color: aliceblue;
-    }
-
-    #col2 {
-      background-color: rgb(187, 212, 233);
-    }
-  
-  </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Animaletics</h1>
-      <h3>Fun facts about animals</h3>
-    </div>
-  </header>
-
-  <section class="container">
-    <div class="row">
-      <div id="col1" class="column col-md-6">
-        <div id="owl-image">
-          <div id="speech-bubble"></div>
-        </div>
-        <button id="more-facts" class="btn btn-primary" >More animals</button>
-      </div>
-
-      <div id="col2" class="column col-md-6">
-        <div class="instructions">Click on a picture to learn some facts about the animal</div>
-        <div id="grid"></div>
-      </div>
-    </div>
+  <!-- #############################  header #######################  -->
+  <section id="header" class="jumbotron text-center pb-1">
+    <h1 class="mb-5">Animaletics</h1>
+    <h2>Fun facts about animals!</h2>
   </section>
 
-  <footer>
-    <div class="container">Made with <span>&#10084;</span>by 
-      <a href="">David</a><span>, </span>
-      <a href="">Zuzana</a><span>, </span>
-      <a href="">Helder</a><span>, & </span>
-      <a href="">David</a><span>.</span>
+
+
+
+
+
+  <!-- #############################  main section/ Gallery #######################  -->
+
+  <section id="gallery">
+
+    <!-- #############################  mascot speech bubble #######################  -->
+
+
+
+    <!-- #############################  mascot img #######################  -->
+    <section class="mascot-image">
+      <p class="bubble speech">Hello David!
+        Hello Zuzana!
+        Hello Fiona!
+      </p>
+
+      <img src="assets/images/mascotOwl.png" alt="">
+    </section>
+
+
+
+    <!-- #############################  cards container #######################  -->
+
+    <div class="container">
+
+      <div class="row">
+
+        <!-- #############################  instructions paragraph #######################  -->
+        <div class="instructions">
+          <p>Click on a picture to learn some facts about the animal</p>
+        </div>
+
+
+        <!-- #############################  first card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Horse</h5>
+              <p class="card-text">Horse</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #############################  second card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dog</h5>
+              <p class="card-text">Dog</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #############################  third card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Whale</h5>
+              <p class="card-text">Whale</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #############################  fourth card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Snake</h5>
+              <p class="card-text">Snake</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #############################  fifth card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sloth</h5>
+              <p class="card-text">Sloth</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #############################  sixth card #######################  -->
+        <div class="col-xl-4 col-lg-6 mb-5 mt-1">
+          <div class="card">
+            <img img-fluid src="https://images.unsplash.com/photo-1496723744796-7216a8d5c244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Turtle</h5>
+              <p class="card-text">Turtle</p>
+              <a href="#" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+
+  </section>
+
+
+  <!-- #############################  footer #######################  -->
+  <footer class="footer">
+    Made with <span>&#10084; </span>by
+    <a class="footer-link" href="">Fiona</a><span>, </span>
+    <a class="footer-link" href="">Zuzana</a><span>, </span>
+    <a class="footer-link" href="">Helder</a><span>, & </span>
+    <a class="footer-link" href="">David</a><span>.</span>
+    <p class="copyright"> © 2023.</p>
   </footer>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script>
+  <!-- #############################  java script links #######################  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 

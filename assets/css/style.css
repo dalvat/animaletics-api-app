@@ -1,0 +1,156 @@
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+
+}
+
+/* ##################################### body ##################################### */
+body {
+    margin: 0 auto 0 auto;
+    font-family: 'Merriweather', serif;
+    color: #40514e;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ##################################### header ##################################### */
+#header {
+    background-color: aquamarine;
+    padding: 100px 0px 0px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8rem;
+    color: #66bfbf;
+    font-weight: normal;
+
+
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #66bfbf;
+    font-weight: normal;
+
+}
+
+
+
+/* ##################################### gallery/main ##################################### */
+#gallery {
+    display: flex;
+    background-color: rgb(15, 173, 201);
+}
+
+
+
+/* ##################################### mascot bubble speech ##################################### */
+p.bubble {
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    line-height: 1.4em;
+    margin: 40px 100px auto;
+    background-color: #fff;
+    border: 8px solid #333;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: large;
+}
+
+p.bubble:before,
+p.bubble:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+p.speech:before {
+    left: 190px;
+    bottom: -50px;
+    border: 25px solid;
+    border-color: #333 transparent transparent #333;
+}
+
+p.speech:after {
+    left: 200px;
+    bottom: -29px;
+    border: 15px solid;
+    border-color: #ffffff transparent transparent #fff;
+}
+
+
+
+
+
+/* ##################################### mascot img ##################################### */
+.mascot-image img {
+    width: 460px;
+    height: 460px;
+    object-fit: cover;
+    position: relative;
+    margin-top: 18px;
+
+
+}
+
+/* ##################################### instructions paragraph ##################################### */
+.instructions p {
+    font-size: 30px;
+    margin: 30px auto;
+}
+
+
+
+
+/* ##################################### cards container ##################################### */
+.container {
+    text-align: center;
+    background-color: antiquewhite;
+
+}
+
+.row {
+    background-color: rgb(24, 226, 223);
+    border: 4mm ridge rgba(211, 220, 50, .6);
+}
+
+.row div .card {
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+
+}
+
+
+/* ##################################### footer ##################################### */
+.footer {
+    text-align: center;
+    background-color: #5c8d89;
+    padding: 50px 0 20px;
+}
+
+
+.footer-link {
+    color: #66bfbf;
+    text-decoration: none;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-link:hover,
+.footer-link:active {
+    color: rgb(10, 241, 71);
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #eaf6f6;
+    font-size: 1rem;
+    padding: 16px 20px;
+    margin-bottom: 45px;
+}
