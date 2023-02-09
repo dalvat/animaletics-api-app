@@ -5,61 +5,44 @@ var giphyStickersURL =
 
 
 let animals = [
-<<<<<<< HEAD
+
     {animalName:'elephant',
-    ApiID: 'https://media0.giphy.com/media/JrJaBFS1vSwus/200.g…1f83tknn8rtmv8uofhjinm78eds3d8ug&rid=200.gif&ct=s',
+    imageSource: './assets/images/elephant.png',
     arrayItem:1},
     {animalName:'duck',
-    ApiID: 'https://media0.giphy.com/media/QVOOeh4YRTslYPhV3r/…g1d878jamrws0uy4nla7xc6gam27mqoy&rid=200.gif&ct=s',
+    imageSource: './assets/images/duck.png',
     arrayItem:2},
     {animalName:'lion',
-    ApiID: 'ttps://media1.giphy.com/media/oSIpdt7l0Jqi4/200.g…ioozurjbnm14dzxfwwd8iph58p40jlaq&rid=200.gif&ct=s',
+    imageSource: './assets/images/lion.png',
     arrayItem:3},
     {animalName:'shark',
-    ApiID: 'https://media4.giphy.com/media/KSYmKFsocah3i/200.g…m47g3wycf4lnk16zqoo7jt0i0rfyczqv&rid=200.gif&ct=s'},
-    {animalName:'giraffe',
-    ApiID: 'https://media4.giphy.com/media/lgun7Mz4DKaU8/200.g…o1x56c9o592paqex6q6mnko7yzwpynik&rid=200.gif&ct=s',
+    imageSource: './assets/images/shark.png',
     arrayItem:4},
-    {animalName:'sheep',
-    ApiID: 'https://media0.giphy.com/media/gFoK2eOtvORYcCbgSf/…a5q08mi0eazgwc5m30uwckrbpxas917e&rid=200.gif&ct=s',
+    {animalName:'giraffe',
+    imageSource: './assets/images/giraffe.png',
     arrayItem:5},
-    {animalName:'octopus',
-    ApiID: 'https://media4.giphy.com/media/tjf6iLZF7HhUOkzCzL/…vuwffhxdkr8d0ikx2ishyg3z9u6zz40e&rid=200.gif&ct=s'},
-    {animalName:'bee',
-    ApiID: 'https://media4.giphy.com/media/XcA7FnnQ43sig5fWmJ/…5z4h9ehhu0i0wadwnosn0u66q25e7q5e&rid=200.gif&ct=s',
+    {animalName:'sheep',
+    imageSource: './assets/images/sheep.png',
     arrayItem:6},
-    {animalName:'cow',
-    ApiID: '	https://media4.giphy.com/media/buieZPtLXBWb6/200.g…hgwyzdoy579ijoy0e8cwxthrzimw1jtw&rid=200.gif&ct=s'},
-    {animalName:'hamster',
-    ApiID: 'https://media3.giphy.com/media/uEpUHiGPzFF9C/200.g…qpf5rgcsg28p80jwet3yocc33vbsls53&rid=200.gif&ct=s',
+    {animalName:'octopus',
+    imageSource: './assets/images/octopus.png'},
+    {animalName:'bee',
+    imageSource: './assets/images/bee.png',
     arrayItem:7},
-    {animalName:'owl',
-    ApiID: 'https://media2.giphy.com/media/Lf6ZhVdR0FFLy/200.g…7178y6loi9okqdi50dlq3zlibs7thped&rid=200.gif&ct=s',
+    {animalName:'cow',
+    imageSource: './assets/images/cow.png',
     arrayItem:8},
+    {animalName:'hamster',
+    imageSource: './assets/images/hamster.png',
+    arrayItem:9},
+    {animalName:'owl',
+    imageSource: './assets/images/owl.png',
+    arrayItem:10}
 ]
-<<<<<<< Updated upstream
-//specifying which animal
-console.log(animals[1].animalName)
-=======
 
 //testing with 'pig'
->>>>>>> Stashed changes
 let ninjaUrl = 'https://api.api-ninjas.com/v1/animals?name=pig'
-=======
-  { animalName: 'elephant', ApiID: '' },
-  { animalName: 'duck', ApiID: '' },
-  { animalName: 'lion', ApiID: '' },
-  { animalName: 'shark', ApiID: '' },
-  { animalName: 'giraffe', ApiID: '' },
-  { animalName: 'eagle', ApiID: '' },
-  { animalName: 'octopus', ApiID: '' },
-  { animalName: 'bee', ApiID: '' },
-  { animalName: 'cow', ApiID: '' },
-  { animalName: 'hamste', ApiID: '' },
-  { animalName: 'owl', ApiID: '' },
-];
-let ninjaUrl = 'https://api.api-ninjas.com/v1/animals?name=pig';
->>>>>>> 6bc93cdb91850c21505df1548b5d93db781cbb46
+
 
 // giphy data
 fetch(giphyStickersURL)
@@ -67,7 +50,6 @@ fetch(giphyStickersURL)
   .then((data) => console.log(data));
 
 //fetching ninja data
-<<<<<<< HEAD
   let options = {
     method: 'GET',
     headers: { 'x-api-key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO' }
@@ -82,29 +64,33 @@ fetch(giphyStickersURL)
           console.log(`error ${err}`)
       }); 
 
+///////////////////////////////////////////////////////////////////////////////////////
+
+
  
+let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
+console.log (randomlySelectedImage.imageSource)
+document.getElementById('card-3').innerHTML = 
+  `<img src="${randomlySelectedImage.imageSource}"  />`;
 
-      ////////////////////////////////////////////////////////////////////////////
-var randomNum = Math.floor(Math.random()*8+1);
 
-card.forEach(){
-
-
-}
+  
+  
+    for (let i=0; i<6; i++){
  
+        let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
+        let imageContainer = document.getElementById('card-'+i);
+        imageContainer.innerHTML = 
+        `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
+        imageContainer.setAttribute("class","col-xl-4 col-lg-6 mb-5 mt-1 ");
+        const title = document.createElement('p');
+        title.style.fontSize='20px';
+        title.innerHTML = randomlySelectedImage.animalName;
+        imageContainer.appendChild(title)
+    }
 
-  var populating Card = document.getElementById ('card-body') 
-=======
-let options = {
-  method: 'GET',
-  headers: { 'x-api-key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO' },
-};
-fetch(ninjaUrl, options)
-  .then((res) => res.json()) // parse response as JSON
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(`error ${err}`);
-  });
->>>>>>> 6bc93cdb91850c21505df1548b5d93db781cbb46
+
+
+
+
+    
