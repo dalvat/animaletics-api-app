@@ -69,7 +69,7 @@ fetch(giphyStickersURL)
       ////////////////////////////////////////////////////////////////////////////
 var randomNum = Math.floor(Math.random()*8+1);
 
-animals.forEach(){
+card.forEach(){
 
 
 }
