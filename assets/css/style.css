@@ -10,7 +10,6 @@ body {
     max-width: 1200px;
     font-family: 'Merriweather', serif;
     color: #40514e;
-    height: 100vh;
 
 }
 
@@ -90,13 +89,9 @@ p.speech:after {
 
 
 /* ##################################### mascot img ##################################### */
-.mascot-image img {
-    width: 460px;
-    height: 460px;
-    object-fit: cover;
-    position: relative;
-    margin-top: 18px;
 
+#mascot-image {
+    max-width: 80%;
 
 }
 
@@ -155,3 +150,10 @@ p.speech:after {
     font-size: 1rem;
     margin-bottom: 6px;
 }
+
+
+/* Fi's additions 9 Feb 2023*/
+#placeholder-image {
+    height: 200px;
+}
+
