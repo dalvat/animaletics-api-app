@@ -10,7 +10,6 @@ body {
     max-width: 1200px;
     font-family: 'Merriweather', serif;
     color: #40514e;
-    height: 100vh;
 
 }
 
@@ -90,13 +89,9 @@ p.speech:after {
 
 
 /* ##################################### mascot img ##################################### */
-.mascot-image img {
-    width: 460px;
-    height: 460px;
-    object-fit: cover;
-    position: relative;
-    margin-top: 18px;
 
+#mascot-image {
+    max-width: 80%;
 
 }
 
@@ -162,7 +157,3 @@ p.speech:after {
     height: 200px;
 }
 
-.modal-header {
-    display: flex;
-    flex-direction: column;
-}
