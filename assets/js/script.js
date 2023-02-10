@@ -66,6 +66,9 @@ for (let i=0; i<6; i++){
       imageContainer.innerHTML = 
       `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
       imageContainer.setAttribute("class"," btn");
+      imageContainer.setAttribute('data-toggle','modal')
+      imageContainer.setAttribute('data-target','#facts-modal')
+
       const title = document.createElement('p');
       title.style.fontSize='20px';
       title.innerHTML = randomlySelectedImage.animalName;
@@ -97,8 +100,8 @@ for (let i=0; i<6; i++){
             //div to store api call from ninja
             let elementCont = $("<div>");
             // to be deeleted - testing div:
-            elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
-            elementCont.css('backgroundColor','orange');
+            // elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+            // elementCont.css('backgroundColor','orange');
             $('#api-container').append(elementCont);
             //modal facts input
             factsInModal.innerHTML = ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
@@ -107,7 +110,7 @@ for (let i=0; i<6; i++){
             //giphy url and div for the response
             let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=1&offset=0&rating=pg&lang=en"
             console.log(animalNameModal)
-            //testing api calls - to be deleted
+            //alocating api gif calls - 
             let holderForImage = $("#imageChoice");
             let imageCont = $("<img>");
             holderForImage.append(imageCont);
