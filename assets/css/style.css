@@ -10,7 +10,6 @@ body {
     max-width: 1200px;
     font-family: 'Merriweather', serif;
     color: #40514e;
-    /*height: 100vh;*/  
 
 }
 
@@ -90,8 +89,10 @@ p.speech:after {
 
 
 /* ##################################### mascot img ##################################### */
+
 #mascot-image {
     max-width: 80%;
+
 }
 
 /* ##################################### instructions paragraph ##################################### */
@@ -155,5 +156,4 @@ p.speech:after {
 #placeholder-image {
     height: 200px;
 }
-
 
