@@ -36,3 +36,24 @@ fetch(ninjaUrl, options)
   .catch((err) => {
     console.log(`error ${err}`);
   });
+
+
+// first modal auto-show on page load
+let storedUserName = localStorage.getItem('input-name');
+if (storedUserName === null) {
+  $("#instructions-modal").modal('show');
+} else {
+  $('#speechBubble').text(storedUserName);
+}
+
+
+// event listener (submit) for first modal to save name to localStorage
+let startButton = $('#start-button');
+
+startButton.on('click', function(event){
+  event.preventDefault();
+  let name = $("#inputName").val();
+  $('#speechBubble').text(name);
+  localStorage.setItem('input-name', name);
+  $('#instructions-modal').modal('toggle');
+});
