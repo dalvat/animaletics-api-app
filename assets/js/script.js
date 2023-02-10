@@ -58,7 +58,7 @@ fetch(ninjaUrl, options)
   .catch((err) => {
     console.log(`error ${err}`);
   });
-
+////////////////////////////////////////////////
   for (let i=0; i<6; i++){
  
     let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
@@ -71,3 +71,7 @@ fetch(ninjaUrl, options)
     title.innerHTML = randomlySelectedImage.animalName;
     imageContainer.appendChild(title)
 }
+//var animalButton = document.getElementsByClassName('btn');
+imageContainer.dataset.target = "#instructions-modal"
+
+imageContainer.addEventListener(('click'),function(){ console.log(imageContainer.dataset.target)})
