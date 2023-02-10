@@ -59,6 +59,7 @@ startButton.on('click', function(event){
   localStorage.setItem('input-name', name);
   $('#instructions-modal').modal('toggle');
 });
+
 //populating cards with random images
 for (let i=0; i<6; i++){
  
@@ -73,27 +74,53 @@ for (let i=0; i<6; i++){
       imageContainer.appendChild(title);
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(){   
-        localStorage.setItem('chosen',  randomlySelectedImage.animalName);
-        let animalNameEl = document.getElementById('animal-name')
-        animalNameEl.innerHTML = localStorage.getItem('chosen')
-        console.log(animalNameEl.innerHTML);
+          localStorage.setItem('chosen',  randomlySelectedImage.animalName);
+          let animalNameEl = document.getElementById('animal-name')
+          animalNameEl.innerHTML = localStorage.getItem('chosen')
+          console.log(animalNameEl.innerHTML);
 
-        
-        //calling data from Ninja - displayed in temporary div
-        $.ajax({
-          url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosen'),
-          method: "GET",
-          headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
-        }).then(function(response) {
-          console.log(response);
-          let elementCont = $("<div>");
-           elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
-           $('#api-container').append(elementCont);
-        
-        });
-})
-}
-;
+          //calling data from Ninja 
+          $.ajax({
+            url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosen'),
+            method: "GET",
+            headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
+          }).then(function(response) {
+            console.log(response);
+            //div to store api call from ninja
+            let elementCont = $("<div>");
+            elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+            elementCont.css('backgroundColor','orange')
+            $('#api-container').append(elementCont);
+
+            
+            //giphy url and div for the response
+            let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q=cow&limit=1&offset=0&rating=pg&lang=en"
+            let holderForImage = $("#imageChoice")
+            let imageCont = $("<img>");
+            holderForImage.append(imageCont)
+            
+                $.ajax({
+                  url: gifURL,
+                  method:"GET",
+                }).then (function(response) {
+                  //fetching gif address - can be smaller or bigger
+                  gifHTTPS = response.data[0].images.downsized.url
+                  console.log(gifHTTPS)
+                  console.log(response)
+
+                  
+                  imageCont.attr('src',gifHTTPS)
+                  imageCont.attr("alt","replacement image")
+                  
+                
+                });
+          });
+
+          
+      });
+};
+
+
 
 
 
@@ -102,21 +129,7 @@ for (let i=0; i<6; i++){
       //  animalNameEl.appendChild(factsDiv)
         //factsDiv.innerHTML = "hello";
 
-// let giphyStickersURL =
-//    'https://api.giphy.com/v1/gifs/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=1&offset=0&rating=pg&lang=en';
-// $.ajax({
-//   url: ninjaURL,
-//   method: "GET"
-// }).then(function(response) {
-//   console.log(response);
-//    let testingImport=response.data[0].url
-//   ///console.log(testingImport)
-//   let imageCont = $("<img/>")
-//    imageCont.attr("src", response.data[0].url)
-//     imageCont.attr("alt","replacement image")
-//    $('#api-container').append(imageCont)
-  
-// });
+
 
 
 
