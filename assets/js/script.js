@@ -1,6 +1,6 @@
 // const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
 // const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
-;
+
 
   let animals = [
 
@@ -38,8 +38,6 @@
     arrayItem:10}
 ]
 
-
-
 // first modal auto-show on page load
 let storedUserName = localStorage.getItem('input-name');
 if (storedUserName === null) {
@@ -75,8 +73,8 @@ for (let i=0; i<6; i++){
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(){   
           localStorage.setItem('chosen',  randomlySelectedImage.animalName);
-          let animalNameEl = document.getElementById('animal-name')
-          animalNameEl.innerHTML = localStorage.getItem('chosen')
+          let animalNameEl = document.getElementById('animal-name');
+          animalNameEl.innerHTML = localStorage.getItem('chosen');
           console.log(animalNameEl.innerHTML);
 
           //calling data from Ninja 
@@ -89,34 +87,27 @@ for (let i=0; i<6; i++){
             //div to store api call from ninja
             let elementCont = $("<div>");
             elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
-            elementCont.css('backgroundColor','orange')
+            elementCont.css('backgroundColor','orange');
             $('#api-container').append(elementCont);
 
             
             //giphy url and div for the response
             let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q=cow&limit=1&offset=0&rating=pg&lang=en"
-            let holderForImage = $("#imageChoice")
+            let holderForImage = $("#imageChoice");
             let imageCont = $("<img>");
-            holderForImage.append(imageCont)
+            holderForImage.append(imageCont);
             
                 $.ajax({
                   url: gifURL,
                   method:"GET",
                 }).then (function(response) {
                   //fetching gif address - can be smaller or bigger
-                  gifHTTPS = response.data[0].images.downsized.url
-                  console.log(gifHTTPS)
-                  console.log(response)
-
-                  
-                  imageCont.attr('src',gifHTTPS)
-                  imageCont.attr("alt","replacement image")
-                  
-                
+                  gifHTTPS = response.data[0].images.downsized.url;
+                  console.log(response);
+                  imageCont.attr('src',gifHTTPS);
+                  imageCont.attr("alt", "replacement image");            
                 });
           });
-
-          
       });
 };
 
