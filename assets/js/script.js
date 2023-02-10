@@ -1,7 +1,6 @@
-const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
-const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
-var giphyStickersURL =
-  'https://api.giphy.com/v1/gifs/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=1&offset=0&rating=pg&lang=en';
+// const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
+// const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
+;
 
   let animals = [
 
@@ -38,26 +37,7 @@ var giphyStickersURL =
     imageSource: './assets/images/owl.png',
     arrayItem:10}
 ]
-let ninjaUrl = 'https://api.api-ninjas.com/v1/animals?name=pig';
 
-// giphy data
-fetch(giphyStickersURL)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-//fetching ninja data
-let options = {
-  method: 'GET',
-  headers: { 'x-api-key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO' },
-};
-fetch(ninjaUrl, options)
-  .then((res) => res.json()) // parse response as JSON
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(`error ${err}`);
-  });
 
 
 // first modal auto-show on page load
@@ -79,36 +59,66 @@ startButton.on('click', function(event){
   localStorage.setItem('input-name', name);
   $('#instructions-modal').modal('toggle');
 });
-
-  for (let i=0; i<6; i++){
+//populating cards with random images
+for (let i=0; i<6; i++){
  
-    let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
-    let imageContainer = document.getElementById('card-'+i);
-    imageContainer.innerHTML = 
-    `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
-    imageContainer.setAttribute("class"," btn");
-    const title = document.createElement('p');
-    title.style.fontSize='20px';
-    title.innerHTML = randomlySelectedImage.animalName;
-    imageContainer.appendChild(title);
-    //on clicking animal image...
-    imageContainer.addEventListener(('click'),function(){   
-      localStorage.setItem('chosen',  randomlySelectedImage.animalName);
-      let animalNameEl = document.getElementById('animal-name')
-      animalNameEl.innerHTML = localStorage.getItem('chosen')
-      console.log(animalNameEl.innerHTML);
+      let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
+      let imageContainer = document.getElementById('card-'+i);
+      imageContainer.innerHTML = 
+      `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
+      imageContainer.setAttribute("class"," btn");
+      const title = document.createElement('p');
+      title.style.fontSize='20px';
+      title.innerHTML = randomlySelectedImage.animalName;
+      imageContainer.appendChild(title);
+      //on clicking animal image...
+      imageContainer.addEventListener(('click'),function(){   
+        localStorage.setItem('chosen',  randomlySelectedImage.animalName);
+        let animalNameEl = document.getElementById('animal-name')
+        animalNameEl.innerHTML = localStorage.getItem('chosen')
+        console.log(animalNameEl.innerHTML);
 
-      //populating facts in modal
-      let factsDiv = document.createElement ('div')
-      animalNameEl.appendChild(factsDiv)
-      factsDiv.innerHTML = "hello";
-
-    
-      
+        
+        //calling data from Ninja - displayed in temporary div
+        $.ajax({
+          url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosen'),
+          method: "GET",
+          headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
+        }).then(function(response) {
+          console.log(response);
+          let elementCont = $("<div>");
+           elementCont.text((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+           $('#api-container').append(elementCont);
+        
+        });
 })
-
 }
+;
 
 
 
- 
+//populating facts in modal
+        //let factsDiv = document.createElement ('div')
+      //  animalNameEl.appendChild(factsDiv)
+        //factsDiv.innerHTML = "hello";
+
+// let giphyStickersURL =
+//    'https://api.giphy.com/v1/gifs/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=1&offset=0&rating=pg&lang=en';
+// $.ajax({
+//   url: ninjaURL,
+//   method: "GET"
+// }).then(function(response) {
+//   console.log(response);
+//    let testingImport=response.data[0].url
+//   ///console.log(testingImport)
+//   let imageCont = $("<img/>")
+//    imageCont.attr("src", response.data[0].url)
+//     imageCont.attr("alt","replacement image")
+//    $('#api-container').append(imageCont)
+  
+// });
+
+
+
+
+
