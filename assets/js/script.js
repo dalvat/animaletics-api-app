@@ -1,7 +1,7 @@
 const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
 const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
 var giphyStickersURL =
-  'https://api.giphy.com/v1/stickers/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=10&offset=0&rating=pg&lang=en';
+  'https://api.giphy.com/v1/gifs/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=1&offset=0&rating=pg&lang=en';
 
   let animals = [
 
@@ -69,9 +69,25 @@ fetch(ninjaUrl, options)
     const title = document.createElement('p');
     title.style.fontSize='20px';
     title.innerHTML = randomlySelectedImage.animalName;
-    imageContainer.appendChild(title)
-}
-//var animalButton = document.getElementsByClassName('btn');
-imageContainer.dataset.target = "#instructions-modal"
+    imageContainer.appendChild(title);
+    //on clicking animal image...
+    imageContainer.addEventListener(('click'),function(){   
+      localStorage.setItem('chosen',  randomlySelectedImage.animalName);
+      let animalNameEl = document.getElementById('animal-name')
+      animalNameEl.innerHTML = localStorage.getItem('chosen')
+      console.log(animalNameEl.innerHTML);
 
-imageContainer.addEventListener(('click'),function(){ console.log(imageContainer.dataset.target)})
+      //populating facts in modal
+      let factsDiv = document.createElement ('div')
+      animalNameEl.appendChild(factsDiv)
+      factsDiv.innerHTML = "hello";
+
+    
+      
+})
+
+}
+
+
+
+ 
