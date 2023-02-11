@@ -31,8 +31,35 @@
     {animalName:'Hamster',
     imageSource: './assets/images/hamster.png',
     arrayItem:8},
+    {animalName:'Duck',
+    imageSource: './assets/images/duck.png',
+    arrayItem:9},
+    {animalName:'Eagle',
+    imageSource: './assets/images/eagle.png',
+    arrayItem:10},
+    {animalName:'Raindeer',
+    imageSource: './assets/images/raindeer.png',
+    arrayItem:11},
+    {animalName:'Rat',
+    imageSource: './assets/images/rat.png',
+    arrayItem:12},
+    {animalName:'Bear',
+    imageSource: './assets/images/bear.png',
+    arrayItem:13},
+    {animalName:'Chicken',
+    imageSource: './assets/images/chicken.png',
+    arrayItem:14},
+    {animalName:'Butterfly',
+    imageSource: './assets/images/butterfly.png',
+    arrayItem:15},
     {animalName:'Owl',
     imageSource: './assets/images/owl.png',
+    arrayItem:16},
+    {animalName:'Spider',
+    imageSource: './assets/images/spider.png',
+    arrayItem:17},
+    {animalName:'Ant',
+    imageSource: './assets/images/ant.png',
     arrayItem:9}
 ]
 
@@ -65,16 +92,16 @@ for (let i=0; i<6; i++){
       `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
       imageContainer.setAttribute("class"," btn");
       //added data to turn into button for opening modal
-      imageContainer.setAttribute('data-toggle','modal');
-      imageContainer.setAttribute('data-target','#facts-modal');
+      imageContainer.setAttribute('data-toggle','modal')
+      imageContainer.setAttribute('data-target','#facts-modal')
       //title under cards
       const title = document.createElement('p');
       title.style.fontSize='20px';
       title.innerHTML = randomlySelectedImage.animalName;
       imageContainer.appendChild(title);
-      //ensuring any animal is displayed only once
-      let idx = animals.indexOf(randomlySelectedImage);
-      delete animals[idx];
+      //running splice() to remove the used image from array to avoid doubling
+      let idx = animals.indexOf(randomlySelectedImage)
+      animals.splice(idx,1)
       
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
@@ -86,7 +113,7 @@ for (let i=0; i<6; i++){
           console.log(animalNameModal.innerHTML);
           //modal facts element and appending to facts section in modal
           let factsInModal = document.getElementById('animal-facts-modal')
-          animalNameModal.appendChild(factsInModal);
+          animalNameModal.appendChild(factsInModal)
           
 
           //calling data from Ninja 
