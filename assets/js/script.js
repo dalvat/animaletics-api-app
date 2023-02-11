@@ -105,17 +105,17 @@ for (let i=0; i<6; i++){
       
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
-          
+        
           localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
           //modal name of animal
-          let animalNameModal = document.getElementById('animal-name');
-          animalNameModal.innerHTML = localStorage.getItem('chosenAnimal');
-          console.log(animalNameModal.innerHTML);
-          //modal facts element and appending to facts section in modal
-          let factsInModal = document.getElementById('animal-facts-modal')
-          animalNameModal.appendChild(factsInModal)
+          let animalNameModal =$('#animal-name');
+          animalNameModal.text (localStorage.getItem('chosenAnimal'));
           
-
+          //modal facts element and appending to facts section in modal
+          let factsInModal =$('#animal-facts-modal')
+          
+          animalNameModal.append(factsInModal)
+          
           //calling data from Ninja 
           $.ajax({
             url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosenAnimal'),
@@ -128,7 +128,7 @@ for (let i=0; i<6; i++){
                 let elementCont = $("<div>");
                 $('#api-container').append(elementCont);
                 //modal facts input
-                factsInModal.innerHTML = ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+                factsInModal.text ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
                 
                 //giphy url and div for the response
                 let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=1&offset=0&rating=pg&lang=en"
@@ -152,14 +152,17 @@ for (let i=0; i<6; i++){
 };
 
 
+//refresh button added
+  let refreshButton = $('#more-facts');
+  refreshButton.on('click',function (){
+      location.reload()
+      console.log("hey")
+  })
 
-
-
-
-
-
-
-
-
-
+//clear  buttonfor facts modal
+let clearButton = $('#facts-modal');
+clearButton.on('click',function (){
+    location.reload()
+    console.log("hey")
+})
 
