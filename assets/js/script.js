@@ -4,38 +4,36 @@
 
   let animals = [
 
-    {animalName:'elephant',
+    {animalName:'Elephant',
     imageSource: './assets/images/elephant.png',
-    arrayItem:1},
-    {animalName:'duck',
-    imageSource: './assets/images/duck.png',
-    arrayItem:2},
-    {animalName:'lion',
+    arrayItem:0},
+    {animalName:'Lion',
     imageSource: './assets/images/lion.png',
-    arrayItem:3},
-    {animalName:'shark',
+    arrayItem:1},
+    {animalName:'Shark',
     imageSource: './assets/images/shark.png',
-    arrayItem:4},
-    {animalName:'giraffe',
+    arrayItem:2},
+    {animalName:'Giraffe',
     imageSource: './assets/images/giraffe.png',
-    arrayItem:5},
-    {animalName:'sheep',
+    arrayItem:3},
+    {animalName:'Sheep',
     imageSource: './assets/images/sheep.png',
-    arrayItem:6},
-    {animalName:'octopus',
-    imageSource: './assets/images/octopus.png'},
-    {animalName:'bee',
+    arrayItem:4},
+    {animalName:'Octopus',
+    imageSource: './assets/images/octopus.png',
+    arrayItem:5},
+    {animalName:'Bee',
     imageSource: './assets/images/bee.png',
-    arrayItem:7},
-    {animalName:'cow',
+    arrayItem:6},
+    {animalName:'Cow',
     imageSource: './assets/images/cow.png',
-    arrayItem:8},
-    {animalName:'hamster',
+    arrayItem:7},
+    {animalName:'Hamster',
     imageSource: './assets/images/hamster.png',
-    arrayItem:9},
-    {animalName:'owl',
+    arrayItem:8},
+    {animalName:'Owl',
     imageSource: './assets/images/owl.png',
-    arrayItem:10}
+    arrayItem:9}
 ]
 
 // first modal auto-show on page load
@@ -67,16 +65,17 @@ for (let i=0; i<6; i++){
       `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
       imageContainer.setAttribute("class"," btn");
       //added data to turn into button for opening modal
-      imageContainer.setAttribute('data-toggle','modal')
-      imageContainer.setAttribute('data-target','#facts-modal')
+      imageContainer.setAttribute('data-toggle','modal');
+      imageContainer.setAttribute('data-target','#facts-modal');
       //title under cards
       const title = document.createElement('p');
       title.style.fontSize='20px';
       title.innerHTML = randomlySelectedImage.animalName;
       imageContainer.appendChild(title);
-
+      //ensuring any animal is displayed only once
+      let idx = animals.indexOf(randomlySelectedImage);
+      delete animals[idx];
       
-
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
           
@@ -85,9 +84,9 @@ for (let i=0; i<6; i++){
           let animalNameModal = document.getElementById('animal-name');
           animalNameModal.innerHTML = localStorage.getItem('chosenAnimal');
           console.log(animalNameModal.innerHTML);
-          //modal facts element
+          //modal facts element and appending to facts section in modal
           let factsInModal = document.getElementById('animal-facts-modal')
-          animalNameModal.appendChild(factsInModal)
+          animalNameModal.appendChild(factsInModal);
           
 
           //calling data from Ninja 
