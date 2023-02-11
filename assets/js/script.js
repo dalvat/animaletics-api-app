@@ -1,64 +1,40 @@
-const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
-const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
-var giphyStickersURL =
-  'https://api.giphy.com/v1/gifs/search?api_key=CsFg6rIT9VQThklrGrafYGaGHa378omF&q=elephant&limit=1&offset=0&rating=pg&lang=en';
+// const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
+// const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
+
 
   let animals = [
 
-    {animalName:'elephant',
+    {animalName:'Elephant',
     imageSource: './assets/images/elephant.png',
-    arrayItem:1},
-    {animalName:'duck',
-    imageSource: './assets/images/duck.png',
-    arrayItem:2},
-    {animalName:'lion',
+    arrayItem:0},
+    {animalName:'Lion',
     imageSource: './assets/images/lion.png',
-    arrayItem:3},
-    {animalName:'shark',
+    arrayItem:1},
+    {animalName:'Shark',
     imageSource: './assets/images/shark.png',
-    arrayItem:4},
-    {animalName:'giraffe',
+    arrayItem:2},
+    {animalName:'Giraffe',
     imageSource: './assets/images/giraffe.png',
-    arrayItem:5},
-    {animalName:'sheep',
+    arrayItem:3},
+    {animalName:'Sheep',
     imageSource: './assets/images/sheep.png',
-    arrayItem:6},
-    {animalName:'octopus',
-    imageSource: './assets/images/octopus.png'},
-    {animalName:'bee',
+    arrayItem:4},
+    {animalName:'Octopus',
+    imageSource: './assets/images/octopus.png',
+    arrayItem:5},
+    {animalName:'Bee',
     imageSource: './assets/images/bee.png',
-    arrayItem:7},
-    {animalName:'cow',
+    arrayItem:6},
+    {animalName:'Cow',
     imageSource: './assets/images/cow.png',
-    arrayItem:8},
-    {animalName:'hamster',
+    arrayItem:7},
+    {animalName:'Hamster',
     imageSource: './assets/images/hamster.png',
-    arrayItem:9},
-    {animalName:'owl',
+    arrayItem:8},
+    {animalName:'Owl',
     imageSource: './assets/images/owl.png',
-    arrayItem:10}
+    arrayItem:9}
 ]
-let ninjaUrl = 'https://api.api-ninjas.com/v1/animals?name=pig';
-
-// giphy data
-fetch(giphyStickersURL)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-//fetching ninja data
-let options = {
-  method: 'GET',
-  headers: { 'x-api-key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO' },
-};
-fetch(ninjaUrl, options)
-  .then((res) => res.json()) // parse response as JSON
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(`error ${err}`);
-  });
-
 
 // first modal auto-show on page load
 let storedUserName = localStorage.getItem('input-name');
@@ -80,35 +56,83 @@ startButton.on('click', function(event){
   $('#instructions-modal').modal('toggle');
 });
 
-  for (let i=0; i<6; i++){
+//populating cards with random images
+for (let i=0; i<6; i++){
  
-    let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
-    let imageContainer = document.getElementById('card-'+i);
-    imageContainer.innerHTML = 
-    `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
-    imageContainer.setAttribute("class"," btn");
-    const title = document.createElement('p');
-    title.style.fontSize='20px';
-    title.innerHTML = randomlySelectedImage.animalName;
-    imageContainer.appendChild(title);
-    //on clicking animal image...
-    imageContainer.addEventListener(('click'),function(){   
-      localStorage.setItem('chosen',  randomlySelectedImage.animalName);
-      let animalNameEl = document.getElementById('animal-name')
-      animalNameEl.innerHTML = localStorage.getItem('chosen')
-      console.log(animalNameEl.innerHTML);
-
-      //populating facts in modal
-      let factsDiv = document.createElement ('div')
-      animalNameEl.appendChild(factsDiv)
-      factsDiv.innerHTML = "hello";
-
-    
+      let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
+      let imageContainer = document.getElementById('card-'+i);
+      imageContainer.innerHTML = 
+      `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
+      imageContainer.setAttribute("class"," btn");
+      //added data to turn into button for opening modal
+      imageContainer.setAttribute('data-toggle','modal');
+      imageContainer.setAttribute('data-target','#facts-modal');
+      //title under cards
+      const title = document.createElement('p');
+      title.style.fontSize='20px';
+      title.innerHTML = randomlySelectedImage.animalName;
+      imageContainer.appendChild(title);
+      //ensuring any animal is displayed only once
+      let idx = animals.indexOf(randomlySelectedImage);
+      delete animals[idx];
       
-})
+      //on clicking animal image...
+      imageContainer.addEventListener(('click'),function(event){   
+          
+          localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
+          //modal name of animal
+          let animalNameModal = document.getElementById('animal-name');
+          animalNameModal.innerHTML = localStorage.getItem('chosenAnimal');
+          console.log(animalNameModal.innerHTML);
+          //modal facts element and appending to facts section in modal
+          let factsInModal = document.getElementById('animal-facts-modal')
+          animalNameModal.appendChild(factsInModal);
+          
 
-}
+          //calling data from Ninja 
+          $.ajax({
+            url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosenAnimal'),
+            method: "GET",
+            headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
+          }).then(function(response) {
+                console.log(response);
+                
+                //div to store api call from ninja
+                let elementCont = $("<div>");
+                $('#api-container').append(elementCont);
+                //modal facts input
+                factsInModal.innerHTML = ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+                
+                //giphy url and div for the response
+                let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=1&offset=0&rating=pg&lang=en"
+                //container for allocating api gif calls - 
+                let holderForImage = $("#imageChoice");
+                let imageCont = $("<img>");
+                holderForImage.append(imageCont);
+
+                //ajax call to giphy
+                $.ajax({
+                  url: gifURL,
+                  method:"GET",
+                }).then (function(response) {
+                  //fetching gif url - image can be smaller or bigger
+                  gifHTTPS = response.data[0].images.downsized.url;
+                  imageCont.attr('src',gifHTTPS);
+                  imageCont.attr("alt", "replacement image");            
+                });
+          });
+      });
+};
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
