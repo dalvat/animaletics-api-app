@@ -62,7 +62,7 @@ for (let i=0; i<6; i++){
       let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
       let imageContainer = document.getElementById('card-'+i);
       imageContainer.innerHTML = 
-      `<img src="${randomlySelectedImage.imageSource}" style="width:150; height:150; background-color:white; border: 5px solid black; border-radius: 1em; margin-left: 1em;" />`;
+      `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
       imageContainer.setAttribute("class"," btn");
       //added data to turn into button for opening modal
       imageContainer.setAttribute('data-toggle','modal');
@@ -102,6 +102,16 @@ for (let i=0; i<6; i++){
                 $('#api-container').append(elementCont);
                 //modal facts input
                 factsInModal.innerHTML = ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+
+                //added facts list
+                $('#first-fact').text("Diet: "+response[0].characteristics.diet)
+                $('#second-fact').text("Lifespan: "+response[0].characteristics.lifespan)
+                $('#third-fact').text("Fun facts: "+response[0].characteristics.slogan)
+                $('#fourth-fact').text("Top speed: "+response[0].characteristics.top_speed)
+                $('#fifth-fact').text("How do you recognise me: "+response[0].characteristics.most_distinctive_feature)
+                $('#sixth-fact').text("Name of young: "+response[0].characteristics.name_of_young)
+                $('#seventh-fact').text("Locations: "+response[0].locations)
+
                 
                 //giphy url and div for the response
                 let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=1&offset=0&rating=pg&lang=en"
@@ -125,17 +135,6 @@ for (let i=0; i<6; i++){
 };
 
 
-//refresh button added
-  let refreshButton = $('#more-facts');
-  refreshButton.on('click',function (){
-      location.reload()
-      console.log("hey")
-  })
 
-//clear  buttonfor facts modal
-let clearButton = $('#facts-modal');
-clearButton.on('click',function (){
-    location.reload()
-    console.log("hey")
-})
+
 
