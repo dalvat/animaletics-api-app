@@ -106,8 +106,9 @@ for (let i=0; i<6; i++){
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
         
-          localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
+        localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
           //modal name of animal
+          $('#imageChoice').empty();
           let animalNameModal =$('#animal-name');
           animalNameModal.text (localStorage.getItem('chosenAnimal'));
           
@@ -145,7 +146,7 @@ for (let i=0; i<6; i++){
                   //fetching gif url - image can be smaller or bigger
                   gifHTTPS = response.data[0].images.downsized.url;
                   imageCont.attr('src',gifHTTPS);
-                  imageCont.attr("alt", "replacement image");            
+                  imageCont.attr("alt", "replacement image");
                 });
           });
       });
