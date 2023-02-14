@@ -21,7 +21,7 @@ body {
 /* ##################################### header ##################################### */
 header {
     background-color: var(--purple);
-    padding: 4px
+    padding: 4em;
 }
 
 h1 {
@@ -57,7 +57,6 @@ a {
     background-color: var(--purple);
     border-radius: 30px;
 }
-
 
 
 /* ##################################### mascot bubble speech ##################################### */
@@ -101,7 +100,7 @@ p.speech:after {
 
 #mascot-image {
     max-width: 80%;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
 }
 
 /* ##################################### instructions paragraph ##################################### */
