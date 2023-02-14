@@ -1,55 +1,65 @@
+:root {
+    --purple: #3621B9;
+    --mint: #00FFA3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 html {
     font-size: 100%;
     scroll-behavior: smooth;
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* ##################################### body ##################################### */
 body {
     margin: auto;
-    max-width: 1200px;
-    font-family: 'Merriweather', serif;
-    color: #40514e;
-
+    background-image: url("../images/zebra.png");
 }
 
 /* ##################################### header ##################################### */
-#header {
-    background-color: aquamarine;
+header {
+    background-color: var(--purple);
     padding: 4px
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 6rem;
-    color: #66bfbf;
-    font-weight: normal;
-
-
+    font-size: 4rem;
+    color: var(--mint);
+    font-weight: 800;
 }
 
-h2 {
-    font-family: 'Montserrat', sans-serif;
+h3 {
+    color: white;
     font-size: 1.5rem;
-    color: #66bfbf;
-    font-weight: normal;
+}
 
+a {
+    color: var(--mint);
 }
 
 
 
 /* ##################################### gallery/main ##################################### */
+#col2 {
+    padding: 3%;
+    color: white;
+}
+
+#gallery .btn {
+    color: white !important;
+}
+
 #gallery {
     display: flex;
-    background-color: rgb(15, 173, 201);
+    flex-wrap: wrap;
+    background-color: var(--purple);
+    border-radius: 30px;
 }
 
 
 
 /* ##################################### mascot bubble speech ##################################### */
 p.bubble {
-    font-family: 'Comic Neue', cursive;
-    font-family: 'Poppins', sans-serif;
     position: relative;
     width: 300px;
     text-align: center;
@@ -85,9 +95,6 @@ p.speech:after {
 }
 
 
-
-
-
 /* ##################################### mascot img ##################################### */
 
 #mascot-image {
@@ -107,52 +114,24 @@ p.speech:after {
 /* ##################################### cards container ##################################### */
 .container {
     text-align: center;
-    background-color: antiquewhite;
-
-}
-
-.row {
-    background-color: rgb(24, 226, 223);
-    border: 4
 }
 
 .row div .card {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     align-items: center;
-
 }
 
 
 /* ##################################### footer ##################################### */
-.footer {
+footer {
     text-align: center;
-    background-color: #5c8d89;
+    background-color: var(--purple);
     padding: 1rem;
+    color: white;
 }
 
-
-.footer-link {
-    align-items: center;
-    color: #66bfbf;
-    text-decoration: none;
-    margin-left: 10px;
-    font-family: 'Montserrat', sans-serif;
+.copywrite {
+    text-align: center;
+    width: 100%;
 }
 
-.footer-link:hover,
-.footer-link:active {
-    color: rgb(10, 241, 71);
-    text-decoration: underline;
-}
-
-.copyright {
-    color: #eaf6f6;
-    font-size: 1rem;
-    margin-bottom: 6px;
-}
-
-
-/* Fi's additions 9 Feb 2023*/
-#placeholder-image {
-    height: 200px;
-}
