@@ -54,7 +54,7 @@ p.bubble {
     width: 300px;
     text-align: center;
     line-height: 1.4em;
-    margin: 40px 100px auto;
+    margin: 80px 100px auto;
     background-color: #fff;
     border: 8px solid #333;
     border-radius: 30px;
@@ -92,7 +92,7 @@ p.speech:after {
 
 #mascot-image {
     max-width: 80%;
-
+    margin-bottom: 2em;
 }
 
 /* ##################################### instructions paragraph ##################################### */
@@ -156,4 +156,3 @@ p.speech:after {
 #placeholder-image {
     height: 200px;
 }
-

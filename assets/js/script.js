@@ -89,7 +89,7 @@ for (let i=0; i<6; i++){
       let randomlySelectedImage = animals[Math.floor(Math.random() * animals.length)];
       let imageContainer = document.getElementById('card-'+i);
       imageContainer.innerHTML = 
-      `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
+      `<img src="${randomlySelectedImage.imageSource}" style="width:150; height:150; background-color:white; border: 5px solid black; border-radius: 1em; margin-left: 1em;" />`;
       imageContainer.setAttribute("class"," btn");
       //added data to turn into button for opening modal
       imageContainer.setAttribute('data-toggle','modal')
@@ -162,7 +162,6 @@ for (let i=0; i<6; i++){
 //clear  buttonfor facts modal
 let clearButton = $('#facts-modal');
 clearButton.on('click',function (){
-    location.reload()
     console.log("hey")
 })
 
