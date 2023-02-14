@@ -31,35 +31,8 @@
     {animalName:'Hamster',
     imageSource: './assets/images/hamster.png',
     arrayItem:8},
-    {animalName:'Duck',
-    imageSource: './assets/images/duck.png',
-    arrayItem:9},
-    {animalName:'Eagle',
-    imageSource: './assets/images/eagle.png',
-    arrayItem:10},
-    {animalName:'Raindeer',
-    imageSource: './assets/images/raindeer.png',
-    arrayItem:11},
-    {animalName:'Rat',
-    imageSource: './assets/images/rat.png',
-    arrayItem:12},
-    {animalName:'Bear',
-    imageSource: './assets/images/bear.png',
-    arrayItem:13},
-    {animalName:'Chicken',
-    imageSource: './assets/images/chicken.png',
-    arrayItem:14},
-    {animalName:'Butterfly',
-    imageSource: './assets/images/butterfly.png',
-    arrayItem:15},
     {animalName:'Owl',
     imageSource: './assets/images/owl.png',
-    arrayItem:16},
-    {animalName:'Spider',
-    imageSource: './assets/images/spider.png',
-    arrayItem:17},
-    {animalName:'Ant',
-    imageSource: './assets/images/ant.png',
     arrayItem:9}
 ]
 
@@ -92,30 +65,30 @@ for (let i=0; i<6; i++){
       `<img src="${randomlySelectedImage.imageSource}" " width="180" height="180" />`;
       imageContainer.setAttribute("class"," btn");
       //added data to turn into button for opening modal
-      imageContainer.setAttribute('data-toggle','modal')
-      imageContainer.setAttribute('data-target','#facts-modal')
+      imageContainer.setAttribute('data-toggle','modal');
+      imageContainer.setAttribute('data-target','#facts-modal');
       //title under cards
       const title = document.createElement('p');
       title.style.fontSize='20px';
       title.innerHTML = randomlySelectedImage.animalName;
       imageContainer.appendChild(title);
-      //running splice() to remove the used image from array to avoid doubling
-      let idx = animals.indexOf(randomlySelectedImage)
-      animals.splice(idx,1)
+      //ensuring any animal is displayed only once
+      let idx = animals.indexOf(randomlySelectedImage);
+      delete animals[idx];
       
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
-        
+          
           localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
           //modal name of animal
-          let animalNameModal =$('#animal-name');
-          animalNameModal.text (localStorage.getItem('chosenAnimal'));
-          
+          let animalNameModal = document.getElementById('animal-name');
+          animalNameModal.innerHTML = localStorage.getItem('chosenAnimal');
+          console.log(animalNameModal.innerHTML);
           //modal facts element and appending to facts section in modal
-          let factsInModal =$('#animal-facts-modal')
+          let factsInModal = document.getElementById('animal-facts-modal')
+          animalNameModal.appendChild(factsInModal);
           
-          animalNameModal.append(factsInModal)
-          
+
           //calling data from Ninja 
           $.ajax({
             url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosenAnimal'),
@@ -128,7 +101,7 @@ for (let i=0; i<6; i++){
                 let elementCont = $("<div>");
                 $('#api-container').append(elementCont);
                 //modal facts input
-                factsInModal.text ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
+                factsInModal.innerHTML = ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
                 
                 //giphy url and div for the response
                 let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=1&offset=0&rating=pg&lang=en"
@@ -152,17 +125,14 @@ for (let i=0; i<6; i++){
 };
 
 
-//refresh button added
-  let refreshButton = $('#more-facts');
-  refreshButton.on('click',function (){
-      location.reload()
-      console.log("hey")
-  })
 
-//clear  buttonfor facts modal
-let clearButton = $('#facts-modal');
-clearButton.on('click',function (){
-    location.reload()
-    console.log("hey")
-})
+
+
+
+
+
+
+
+
+
 
