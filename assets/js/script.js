@@ -78,12 +78,14 @@ for (let i=0; i<6; i++){
       
       //on clicking animal image...
       imageContainer.addEventListener(('click'),function(event){   
-          
-          localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
+    
+        localStorage.setItem('chosenAnimal',  randomlySelectedImage.animalName);
           //modal name of animal
-          let animalNameModal = document.getElementById('animal-name');
-          animalNameModal.innerHTML = localStorage.getItem('chosenAnimal');
-          console.log(animalNameModal.innerHTML);
+          $('#imageChoice').empty();
+          let animalNameModal =$('#animal-name');
+          animalNameModal.text (localStorage.getItem('chosenAnimal'));
+          
+
           //modal facts element and appending to facts section in modal
           let factsInModal = document.getElementById('animal-facts-modal')
           animalNameModal.appendChild(factsInModal);
@@ -128,7 +130,7 @@ for (let i=0; i<6; i++){
                   //fetching gif url - image can be smaller or bigger
                   gifHTTPS = response.data[0].images.downsized.url;
                   imageCont.attr('src',gifHTTPS);
-                  imageCont.attr("alt", "replacement image");            
+                  imageCont.attr("alt", "replacement image");
                 });
           });
       });
