@@ -1,7 +1,3 @@
-// const giphyApi = '6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz';
-// const ninjaApi = 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO';
-
-
 let animals = [
 
   {animalName:'Elephant',
@@ -126,7 +122,6 @@ for (let i=0; i<6; i++){
               let elementCont = $("<div>");
               $('#api-container').append(elementCont);
               //modal facts input
-              // factsInModal.text ((response[0].characteristics.diet)+"  "+(response[0].locations[0])+"  "+(response[0].name));
               $('#first-fact').text("Where do they live: "+ (response[0].locations));
               $('#second-fact').text("Habitat: "+ (response[0].characteristics.habitat));
               $('#third-fact').text("Name of young: "+ (response[0].characteristics.name_of_young));
@@ -170,11 +165,3 @@ let refreshButton = $('#more-facts');
 refreshButton.on('click',function (){
     location.reload();
 })
-
-//clear  buttonfor facts modal
-// let clearButton = $('#facts-modal');
-// clearButton.on('click',function (){
-//     location.reload()
-//     console.log("hey")
-// })
-
