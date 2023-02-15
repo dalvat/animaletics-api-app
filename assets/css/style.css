@@ -50,6 +50,7 @@ header {
 
 /* ##################################### instructions paragraph ##################################### */
 .instructions h3 {
+    padding: 15px 0;
     font-size: 20px;
     margin: 20px auto;
 }
@@ -125,6 +126,13 @@ p.speech:after {
     max-width: 400px;
 }
 
+#more-facts {
+    background-color: black;
+    color: var(--mint);
+    border: none;
+    padding: 10px 20px;
+}
+
 /* ##################################### footer ##################################### */
 footer {
     text-align: center;
@@ -158,14 +166,20 @@ footer {
 }
 
 /* Modals --------------------- */
-#animal-name {
+.modal-content {
+    border: 7px solid black;
+    border-radius: 14px;
+}
+
+#animal-name, .modal-title {
     text-align: center;
     color: var(--purple);
 }
 
-#clear-button {
+#clear-button, #start-button {
     color: white;
     background-color: black;
+    border: none;
 }
 
 #animal-facts-modal {
@@ -175,8 +189,4 @@ footer {
 #modal-content-body ul {
     padding: 0;
     list-style-type: none;
-}
-#more-facts {
-    background-color:var(--purple);
-    border: 1px black solid;
 }
