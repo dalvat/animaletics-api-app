@@ -114,13 +114,12 @@ p.speech:after {
 
 
 
-
 /* ##################################### cards container ##################################### */
 .container {
     text-align: center;
 }
 
-.row div .card {
+.card {
     background-color: white;
     align-items: center;
 }
