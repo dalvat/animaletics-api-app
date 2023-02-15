@@ -60,21 +60,20 @@ let animals = [
 // first modal auto-show on page load
 let storedUserName = localStorage.getItem('input-name');
 if (storedUserName === null) {
-$("#instructions-modal").modal('show');
+    $("#instructions-modal").modal('show');
 } else {
-$('#speechBubble').text(storedUserName);
+    $('#speechBubble').text(storedUserName);
 }
-
 
 // event listener (submit) for first modal to save name to localStorage
 let startButton = $('#start-button');
 
 startButton.on('click', function(event){
-event.preventDefault();
-let name = $("#inputName").val();
-$('#speechBubble').text(name);
-localStorage.setItem('input-name', name);
-$('#instructions-modal').modal('toggle');
+    event.preventDefault();
+    let name = $("#inputName").val();
+    $('#speechBubble').text(name);
+    localStorage.setItem('input-name', name);
+    $('#instructions-modal').modal('toggle');
 });
 
 //populating cards with random images
@@ -112,40 +111,46 @@ for (let i=0; i<6; i++){
         
         //calling data from Ninja 
         $.ajax({
-          url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosenAnimal'),
-          method: "GET",
-          headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
+              url: 'https://api.api-ninjas.com/v1/animals?name='+localStorage.getItem('chosenAnimal'),
+              method: "GET",
+              headers: { 'X-Api-Key': 'nu0nGP8mTDfJcW2JSl2Fwg==VZ4ntEbwyUNsM6bO'},
         }).then(function(response) {
-              console.log(response);
-              
-              //modal- facts input
-               let responseLocation = (response[0].locations)
-               if (responseLocation!==undefined) { $('#first-fact').text("Where do they live: "+ responseLocation)};
+              //modal- facts input - ensuring undefined isn't displayed 
+               let responseLocation = (response[0].locations);
+               if (responseLocation!==undefined) { $('#first-fact').text("Where do they live: "+ responseLocation)}
+               else { $('#first-fact').text("")};
 
-               let responseHabitat = (response[0].characteristics.habitat)
-               if (responseHabitat!==undefined) { $('#second-fact').text("Habitat: "+ responseHabitat)};
+               let responseHabitat = (response[0].characteristics.habitat);
+               if (responseHabitat!==undefined) { $('#second-fact').text("Habitat: "+ responseHabitat)}
+               else { $('#second-fact').text("")};
 
-               let responseYoung = (response[0].characteristics.name_of_young)
-               if (responseYoung!==undefined) { $('#third-fact').text("Name of young: "+ responseYoung)};
+               let responseYoung = (response[0].characteristics.name_of_young);
+               if (responseYoung!==undefined) { $('#third-fact').text("Name of young: "+ responseYoung)}
+               else { $('#third-fact').text("")};
                
                let responseSpeed = (response[0].characteristics.top_speed);
-               if (responseSpeed!==undefined) { $('#fourth-fact').text("Top Speed: "+ responseSpeed)};
+               if (responseSpeed!==undefined) { $('#fourth-fact').text("Top Speed: "+ responseSpeed)}
+               else { $('#fourth-fact').text("")};
               
-               let responseFun = (response[0].characteristics.slogan)
-               if (responseFun!==undefined) { $('#fifth-fact').text("Fun fact: "+ responseFun)};
+               let responseFun = (response[0].characteristics.slogan);
+               if (responseFun!==undefined) { $('#fifth-fact').text("Fun fact: "+ responseFun)}
+               else { $('#fifth-fact').text("")};
 
-               let responseLife = (response[0].characteristics.lifespan)
-               if (responseLife!==undefined) { $('#sixth-fact').text("Life_span: "+ responseLife)};
+               let responseLife = (response[0].characteristics.lifespan);
+               if (responseLife!==undefined) { $('#sixth-fact').text("Life_span: "+ responseLife)}
+               else { $('#sixth-fact').text("")};
 
-               let responseDiet = (response[0].characteristics.diet)
-               if (responseDiet!==undefined) { $('#seventh-fact').text("What do they eat: "+ responseDiet)};
+               let responseDiet = (response[0].characteristics.diet);
+               if (responseDiet!==undefined) { $('#seventh-fact').text("What do they eat: "+ responseDiet)}
+               else { $('#seventh-fact').text("")};
 
-               let responseFeature = (response[0].response[0].characteristics.most_distinctive_feature)
-               if (responseFeature!==undefined) { $('#eight-fact').text("Most distinctive feature: "+ responseFeature)};
+               let responseFeature = (response[0].characteristics.most_distinctive_feature);
+               if (responseFeature!==undefined) { $('#eight-fact').text("Most distinctive feature: "+ responseFeature)}
+               else { $('#eight-fact').text("")};
 
-               let responseThreat = (response[0].characteristics.biggest_threat)
-               if (responseThreat!==undefined) { $('#ninth-fact').text("Top Speed: "+ responseThreat)};
-
+               let responseThreat = (response[0].characteristics.biggest_threat);
+               if (responseThreat!==undefined) { $('#ninth-fact').text("Biggest threat: "+ responseThreat)}
+               else { $('#ninth-fact').text("")};
 
               //giphy url and div for the response
               let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=5&offset=0&rating=pg&lang=en"
@@ -161,13 +166,13 @@ for (let i=0; i<6; i++){
               
               //ajax call to giphy
               $.ajax({
-                url: gifURL,
-                method:"GET",
+                  url: gifURL,
+                  method:"GET",
               }).then (function(response) {
                 //fetching gif url - image can be smaller or bigger
-                gifHTTPS = response.data[0].images.downsized.url;
-                imageCont.attr('src',gifHTTPS);
-                imageCont.attr("alt", "replacement image");            
+                  gifHTTPS = response.data[0].images.downsized.url;
+                  imageCont.attr('src',gifHTTPS);
+                  imageCont.attr("alt", "replacement image");            
               });
         });
     });
@@ -178,6 +183,3 @@ let refreshButton = $('#more-facts');
 refreshButton.on('click',function (){
     location.reload();
 })
-
-
-
