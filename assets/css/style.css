@@ -103,7 +103,7 @@ p.speech:after {
 /* ##################################### mascot img ##################################### */
 #mascot {
     max-width: 500px;
-    margin: auto;
+    margin: 20px; auto;
 }
 
 #mascot-image {
