@@ -118,20 +118,34 @@ for (let i=0; i<6; i++){
         }).then(function(response) {
               console.log(response);
               
-              //div to store api call from ninja
-              let elementCont = $("<div>");
-              $('#api-container').append(elementCont);
-              //modal facts input
-              $('#first-fact').text("Where do they live: "+ (response[0].locations));
-              $('#second-fact').text("Habitat: "+ (response[0].characteristics.habitat));
-              $('#third-fact').text("Name of young: "+ (response[0].characteristics.name_of_young));
-              $('#fourth-fact').text("Top speed: "+ (response[0].characteristics.top_speed));
-              $('#fifth-fact').text("Fun fact: "+ (response[0].characteristics.slogan));
-              $('#sixth-fact').text("Life span: "+ (response[0].characteristics.lifespan));
-              $('#seventh-fact').text("What do they eat: "+ (response[0].characteristics.diet));
-              $('#eight-fact').text("Most distinquished feature:  "+ (response[0].characteristics.most_distinctive_feature));
-              $('#ninth-fact').text("Biggest threat: "+ response[0].characteristics.biggest_threat);
+              //modal- facts input
+               let responseLocation = (response[0].locations)
+               if (responseLocation!==undefined) { $('#first-fact').text("Where do they live: "+ responseLocation)};
+
+               let responseHabitat = (response[0].characteristics.habitat)
+               if (responseHabitat!==undefined) { $('#second-fact').text("Habitat: "+ responseHabitat)};
+
+               let responseYoung = (response[0].characteristics.name_of_young)
+               if (responseYoung!==undefined) { $('#third-fact').text("Name of young: "+ responseYoung)};
+               
+               let responseSpeed = (response[0].characteristics.top_speed);
+               if (responseSpeed!==undefined) { $('#fourth-fact').text("Top Speed: "+ responseSpeed)};
               
+               let responseFun = (response[0].characteristics.slogan)
+               if (responseFun!==undefined) { $('#fifth-fact').text("Fun fact: "+ responseFun)};
+
+               let responseLife = (response[0].characteristics.lifespan)
+               if (responseLife!==undefined) { $('#sixth-fact').text("Life_span: "+ responseLife)};
+
+               let responseDiet = (response[0].characteristics.diet)
+               if (responseDiet!==undefined) { $('#seventh-fact').text("What do they eat: "+ responseDiet)};
+
+               let responseFeature = (response[0].response[0].characteristics.most_distinctive_feature)
+               if (responseFeature!==undefined) { $('#eight-fact').text("Most distinctive feature: "+ responseFeature)};
+
+               let responseThreat = (response[0].characteristics.biggest_threat)
+               if (responseThreat!==undefined) { $('#ninth-fact').text("Top Speed: "+ responseThreat)};
+
 
               //giphy url and div for the response
               let gifURL ="https://api.giphy.com/v1/gifs/search?api_key=6AOXnBTIbFMl4rE7kd6emFGfdEfEDgUz&q="+localStorage.getItem('chosenAnimal')+"&limit=5&offset=0&rating=pg&lang=en"
@@ -159,9 +173,11 @@ for (let i=0; i<6; i++){
     });
 };
 
-
 //refresh button added
 let refreshButton = $('#more-facts');
 refreshButton.on('click',function (){
     location.reload();
 })
+
+
+
