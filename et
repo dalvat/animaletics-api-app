@@ -1,0 +1,69 @@
+[33mcommit 4f92a06680d92773d5c7c00ccda1df77b0591b47[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: b4f1bb4 7015bf7
+Author: fdunnington <fi@fidunnington.com>
+Date:   Tue Feb 14 17:52:17 2023 +0100
+
+    Merge pull request #40 from dalvat/add-footer-links-2
+    
+    Add footer links 2
+
+[33mcommit 7015bf7dc8b97b01a2fbcfc4e065e8b76fba5be0[m
+Merge: a40279c b4f1bb4
+Author: David Salvat <119346010+dalvat@users.noreply.github.com>
+Date:   Tue Feb 14 18:50:53 2023 +0200
+
+    Merge branch 'main' into add-footer-links-2
+
+[33mcommit a40279c3172c3ddae0a63c3ec213aee889882bac[m
+Author: Helder Balbino <helderbalbino@googlemail.com>
+Date:   Tue Feb 14 16:49:45 2023 +0000
+
+    add links to footer
+
+[33mcommit b4f1bb4aeccb8a087cc0ae5575c397045e2215b2[m
+Merge: 6709280 e7eaebb
+Author: David Salvat <119346010+dalvat@users.noreply.github.com>
+Date:   Tue Feb 14 18:46:14 2023 +0200
+
+    Merge pull request #39 from dalvat/facts-modal-gif-fix
+    
+    gifs now replaced not appended
+
+[33mcommit e7eaebbc5b9e0848c5814f4032642bf4bfec329b[m
+Author: unknown <dmlswebdev@gmail.com>
+Date:   Tue Feb 14 18:37:40 2023 +0200
+
+    gifs now replaced not appended
+
+[33mcommit 48656093fe7552d6f72163b5fc6a52f86ac9698f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: c654455 6709280
+Author: ZuzanaElt <zuzanaeltom@gmail.com>
+Date:   Tue Feb 14 16:25:39 2023 +0000
+
+    Merge branch 'main' of github.com:dalvat/animaletics-api-app
+
+[33mcommit 2ab75b1f84fea102cdff6ff5f8d0318a65694e70[m
+Author: Helder Balbino <helderbalbino@googlemail.com>
+Date:   Tue Feb 14 16:20:25 2023 +0000
+
+    add links to footer
+
+[33mcommit c65445522f2936c6e47917a75d5d648b5bb94af5[m
+Merge: bdd0dab b7bc1aa
+Author: ZuzanaElt <zuzanaeltom@gmail.com>
+Date:   Tue Feb 14 15:30:45 2023 +0000
+
+    Merge branch 'main' of github.com:dalvat/animaletics-api-app
+
+[33mcommit bdd0dabf29216983e6236fd3afdfb45086df7c19[m
+Merge: ba812d9 9b79c24
+Author: ZuzanaElt <zuzanaeltom@gmail.com>
+Date:   Tue Feb 14 15:30:29 2023 +0000
+
+    commit due to merge
+
+[33mcommit ba812d91e8b9b6733fde3d26699ad38708504fd1[m
+Author: ZuzanaElt <zuzanaeltom@gmail.com>
+Date:   Tue Feb 14 15:19:46 2023 +0000
+
+    pulling latest

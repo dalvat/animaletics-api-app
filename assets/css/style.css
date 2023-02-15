@@ -176,3 +176,7 @@ footer {
     padding: 0;
     list-style-type: none;
 }
+#more-facts {
+    background-color:var(--purple);
+    border: 1px black solid;
+}
