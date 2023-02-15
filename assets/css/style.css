@@ -26,6 +26,8 @@ h2, h3 {
     color: white;
     font-weight: 100;
     font-size: 1.5em;
+    font-weight: 100;
+    font-size: 1.5em;
 }
 
 a {
@@ -40,9 +42,21 @@ header {
 
 
 /* ##################################### gallery/main ##################################### */
+
 #col2 {
     padding: 3%;
     color: white;
+}
+
+/* ##################################### instructions paragraph ##################################### */
+.instructions h3 {
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+/* ##################################### cards container ##################################### */
+.container {
+    text-align: center;
 }
 
 #gallery .btn {
@@ -62,19 +76,20 @@ header {
     border-radius: 14px;
 }
 
+
 /* ##################################### mascot bubble speech ##################################### */
 p.bubble {
     position: relative;
     float: right;
     max-width: 90%;
-    width: 300px;
+    float: right;
     text-align: center;
     line-height: 1.4em;
-    /* margin: 80px 100px auto; */
     background-color: white;
     border: 8px solid black;
     border-radius: 30px;
     padding: 20px 10px;
+
 }
 
 p.bubble:before,
@@ -103,27 +118,11 @@ p.speech:after {
 /* ##################################### mascot img ##################################### */
 #mascot {
     max-width: 500px;
-    margin: auto;
+    margin: 20px auto;
 }
 
 #mascot-image {
     max-width: 400px;
-}
-
-/* ##################################### instructions paragraph ##################################### */
-.instructions p {
-    font-size: 20px;
-    margin: 30px auto;
-}
-
-/* ##################################### cards container ##################################### */
-.container {
-    text-align: center;
-}
-
-.card {
-    background-color: white;
-    align-items: center;
 }
 
 /* ##################################### footer ##################################### */
@@ -156,4 +155,24 @@ footer {
     footer {
         font-size: 12px;
     }
+}
+
+/* Modals --------------------- */
+#animal-name {
+    text-align: center;
+    color: var(--purple);
+}
+
+#clear-button {
+    color: white;
+    background-color: black;
+}
+
+#animal-facts-modal {
+    font-weight: bold;
+}
+
+#modal-content-body ul {
+    padding: 0;
+    list-style-type: none;
 }
