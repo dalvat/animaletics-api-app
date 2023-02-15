@@ -4,7 +4,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-* {
+html {
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
 }
@@ -15,12 +15,6 @@ body {
     background-image: url("../images/zebra.png");
 }
 
-/* ##################################### header ##################################### */
-header {
-    background-color: var(--purple);
-    padding: 4em;
-}
-
 h1 {
     font-size: 5rem;
     color: var(--mint);
@@ -28,16 +22,22 @@ h1 {
     margin: 0;
 }
 
-h3 {
+h2, h3 {
     color: white;
-    font-size: 1em;
     font-weight: 100;
-
+    font-size: 1.5em;
 }
 
 a {
     color: var(--mint);
 }
+
+/* ##################################### header ##################################### */
+header {
+    background-color: var(--purple);
+    padding: 3em;
+}
+
 
 /* ##################################### gallery/main ##################################### */
 #col2 {
@@ -56,20 +56,25 @@ a {
     border-radius: 30px;
 }
 
+.card {
+    background-color: white;
+    border: 7px solid black;
+    border-radius: 14px;
+}
 
 /* ##################################### mascot bubble speech ##################################### */
 p.bubble {
     position: relative;
-    max-width: 300px;
-    width: 90%;
+    float: right;
+    max-width: 90%;
+    width: 300px;
     text-align: center;
     line-height: 1.4em;
-    margin: 80px 100px auto;
+    /* margin: 80px 100px auto; */
     background-color: white;
     border: 8px solid black;
     border-radius: 30px;
-    padding: 20px;
-    font-size: large;
+    padding: 20px 10px;
 }
 
 p.bubble:before,
@@ -96,10 +101,13 @@ p.speech:after {
 
 
 /* ##################################### mascot img ##################################### */
+#mascot {
+    max-width: 500px;
+    margin: auto;
+}
 
 #mascot-image {
-    max-width: 80%;
-    /* margin-bottom: 2em; */
+    max-width: 400px;
 }
 
 /* ##################################### instructions paragraph ##################################### */
@@ -107,8 +115,6 @@ p.speech:after {
     font-size: 20px;
     margin: 30px auto;
 }
-
-
 
 /* ##################################### cards container ##################################### */
 .container {
@@ -119,7 +125,6 @@ p.speech:after {
     background-color: white;
     align-items: center;
 }
-
 
 /* ##################################### footer ##################################### */
 footer {
@@ -134,8 +139,12 @@ footer {
     width: 100%;
 }
 
+/*Media query for smaller screens -----------------*/
+@media only screen and (max-width: 991px) {
+    header {
+        padding: 1em;
+    }
 
-@media only screen and (max-width: 870px) {
     h1 {
         font-size: 3em;
     }
