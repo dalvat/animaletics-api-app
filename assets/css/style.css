@@ -127,8 +127,9 @@ p.speech:after {
 }
 
 #more-facts {
-    background-color: black;
-    color: var(--mint);
+    background-color: var(--mint);
+    color: black;
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
 }
