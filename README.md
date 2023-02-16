@@ -9,6 +9,8 @@ All content is age-appropriate.
 
 Deployed at: https://dalvat.github.io/animaletics-api-app/
 
+Presentation link: https://docs.google.com/presentation/d/1HBqmW8BWp8weNwrTQrbeRQjmIkflEZrSJTYto5Vw3RA/edit?usp=sharing
+
 ![screenshot of the deployed web app](./assets/images/animaletics%20screenshot.png)
 
 
