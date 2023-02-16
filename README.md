@@ -1,5 +1,11 @@
 # Animaletics
-Animaletics - Fun Facts about Animals
+
+An app aimed at 5-8yr olds, providing a fun way for kids to learn more about the incredible world of animals.
+
+The Animaletics app can be used individually to learn interesting facts and see funny animal GIFs by clicking on an animal, or playing with friends and testing their knowledge of animal facts along the way. 
+
+All content is age-appropriate.
+
 
 Deployed at: https://dalvat.github.io/animaletics-api-app/
 
