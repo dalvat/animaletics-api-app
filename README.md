@@ -1,7 +1,10 @@
-# animaletics
+# Animaletics
 Animaletics - Fun Facts about Animals
 
-## user story
+Deployed at: https://dalvat.github.io/animaletics-api-app/
+
+
+## User Story
 As a user I want to be able to discover different facts about animals
 
 As a user I want my experience to be personalised 
@@ -15,7 +18,7 @@ When I select the animal image I'm shown a list of facts about that animal
 When I hover on the animal gif it becomes animated
 
 
-## acceptance criteria
+## Acceptance Criteria
 - Instructions on what to do are included in the page content
 
 - When the page is loaded the user is presented with a modal that says 'Welcome to Animaletics' and prompts user to input their name
@@ -37,5 +40,3 @@ When I hover on the animal gif it becomes animated
 - The page shoud include a footer with details of who developed the App and a link to the repository
 
 - The app should be responsive.
-
-
