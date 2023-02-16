@@ -40,3 +40,5 @@ When I hover on the animal gif it becomes animated
 - The page shoud include a footer with details of who developed the App and a link to the repository
 
 - The app should be responsive.
+
+![screenshot of the loading page](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/Zuzana/Repos/zk-challenges/animaletics-api-app/assets/images/animaletics%20screenshot.png?version%3D1676551340151)
