@@ -179,6 +179,8 @@ footer {
 #animal-name, .modal-title {
     text-align: center;
     color: var(--purple);
+    font-weight: bold;
+    padding-top: 0.5em;
 }
 
 #clear-button, #start-button {
@@ -188,10 +190,26 @@ footer {
 }
 
 #animal-facts-modal {
-    font-weight: bold;
+    text-align: center;
+    color: var(--purple);
+    font-weight:normal;
 }
 
 #modal-content-body ul {
     padding: 0;
     list-style-type: none;
+}
+
+#imageChoice {
+    display: flex;
+    justify-content: center;
+}
+
+#facts-list li {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#instructions-modal {
+    background-color: var(--purple);
 }
