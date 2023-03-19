@@ -19,8 +19,8 @@ Presentation link: https://docs.google.com/presentation/d/1HBqmW8BWp8weNwrTQrbeR
 
 ## Table of Contents
 
-- [User Story](#user)
-- [Acceptance Criteria](#acceptance)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
 - [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
