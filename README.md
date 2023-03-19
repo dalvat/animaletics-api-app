@@ -11,7 +11,7 @@ The Animaletics app can be used individually to learn interesting facts and see 
 All content is age-appropriate.
 
 
-Deployed at: <a href="https://dalvat.github.io/animaletics-api-app/">https://dalvat.github.io/animaletics-api-app/?target=_blank</a>
+Deployed at: <a href="https://dalvat.github.io/animaletics-api-app/" target="_blank">https://dalvat.github.io/animaletics-api-app/</a>
 
 ![screenshot of the deployed web app](./assets/images/animaletics%20screenshot.png)
 
