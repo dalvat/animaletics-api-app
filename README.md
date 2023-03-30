@@ -68,6 +68,7 @@ When I hover on the animal gif it becomes animated
 
 ### Collaborators:
 
+- David Salvat [GitHub Profile](https://github.com/dalvat/)
 - Helder Balbino [GitHub Profile](https://github.com/HelderBalbino)
 - Fi Dunnington [GitHub Profile](https://github.com/fdunnington)
 - Zuzana Knightova [GitHub Profile](https://github.com/ZuzanaElt)
